@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg school-nav fixed-top shadow-sm">
+        <div class="container">
+
+            <a class="navbar-brand school-brand" href="{% url 'home' %}">
+                <i class="bi bi-book-half"></i> Royal Public School
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse text-center" id="menu">
+                <ul class="navbar-nav ms-auto gap-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if active == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if active == 'about' %}active{% endif %}" href="{% url 'about' %}">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if active == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if active == 'facilities' %}active{% endif %}" href="{% url 'facilities' %}">Facilities</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if active == 'admissions' %}active{% endif %}" href="{% url 'admissions' %}">Admissions</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if active == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- SPACE BELOW NAVBAR -->
+    <div style="height: 80px;"></div>
