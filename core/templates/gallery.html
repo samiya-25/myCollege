@@ -1,0 +1,94 @@
+{% load static %}
+{% include 'header.html' %}
+
+<!-- HERO BANNER -->
+<section class="school-hero d-flex align-items-center">
+    <div class="container text-center text-white hero-content">
+        <h1 class="hero-title">School Gallery</h1>
+        <p class="hero-subtitle">Capturing moments of learning, joy & creativity</p>
+    </div>
+</section>
+
+<!-- FILTER BUTTONS -->
+<section class="section-padding">
+    <div class="container text-center mb-4">
+        <h2 class="section-title neon-text">Explore Our Activities</h2>
+
+        <div class="gallery-filters mt-4">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+            <button class="filter-btn" data-filter="classroom">Classrooms</button>
+            <button class="filter-btn" data-filter="students">Students</button>
+        </div>
+    </div>
+
+    <!-- GALLERY GRID -->
+    <div class="container">
+        <div class="row g-4 gallery-grid">
+
+            <div class="col-lg-4 col-md-6 gallery-item events">
+                <div class="glass-card gallery-card">
+                    <img src="static/images/g1.jpg" class="img-fluid gallery-img" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 gallery-item classroom">
+                <div class="glass-card gallery-card">
+                    <img src="static/images/g2.jpg" class="img-fluid gallery-img" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 gallery-item students">
+                <div class="glass-card gallery-card">
+                    <img src="static/images/g3.jpg" class="img-fluid gallery-img" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 gallery-item sports">
+                <div class="glass-card gallery-card">
+                    <img src="static/images/g4.jpg" class="img-fluid gallery-img" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 gallery-item events">
+                <div class="glass-card gallery-card">
+                    <img src="static/images/g5.jpg" class="img-fluid gallery-img" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 gallery-item students">
+                <div class="glass-card gallery-card">
+                    <img src="static/images/g6.jpg" class="img-fluid gallery-img" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+{% include 'footer.html' %}
+
+<!-- FILTER SCRIPT -->
+<script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            document.querySelector(".filter-btn.active").classList.remove("active");
+            btn.classList.add("active");
+
+            const filter = btn.getAttribute("data-filter");
+
+            galleryItems.forEach(item => {
+                item.style.display =
+                    (filter === "all" || item.classList.contains(filter))
+                        ? "block"
+                        : "none";
+            });
+        });
+    });
+</script>

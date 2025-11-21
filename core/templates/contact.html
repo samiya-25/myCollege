@@ -1,0 +1,51 @@
+{% load static %}
+{% include 'header.html' %}
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">
+        We are here to assist you with any queries about admissions, facilities or general information.
+    </p>
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE INFO -->
+        <div class="contact-info">
+            <h3>📍 School Address</h3>
+            <p>Royal Public School<br>
+                Near Central Park, City Road,<br>
+                Maharashtra – 415612</p>
+
+            <h3>📞 Phone</h3>
+            <p>+91 98765 43210<br>+91 91234 56789</p>
+
+            <h3>📧 Email</h3>
+            <p>support@royalschool.in<br>info@royalschool.in</p>
+
+            <h3>⏰ School Timings</h3>
+            <p>Monday – Saturday<br>9:00 AM – 5:00 PM</p>
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <form class="contact-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="phone" placeholder="Mobile Number" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+    </div>
+</section>
+
+<!-- Google Map -->
+<section class="map-section">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.417652830927!2d75.57030847594288!3d17.65975248801456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5db8fca12345%3A0x9e0f12ea9cd12345!2sSchool!5e0!3m2!1sen!2sin!4v1700000000000"
+        allowfullscreen="" loading="lazy">
+    </iframe>
+</section>
+
+{% include "footer.html" %}
