@@ -36,6 +36,11 @@ class Staff(models.Model):
     bio = models.TextField(blank=True)
     def __str__(self): return self.name
 
+class Admission(models.Model):
+    title  = models.CharField(max_length=100)
+    point  = models.CharField(max_length=300)
+    def __str__(self): return self.title
+
 class AdmissionInquiry(models.Model):
     name = models.CharField(max_length=150)
     parent_name = models.CharField(max_length=150, blank=True)

@@ -48,7 +48,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'royal_school',          # your DB name
         'USER': 'root',
-        'PASSWORD': 'root@123',
+        'PASSWORD': 'root@123456',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8mb4'},

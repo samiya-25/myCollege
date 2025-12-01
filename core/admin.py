@@ -1,6 +1,6 @@
 # core/admin.py
 from django.contrib import admin
-from .models import Facility, GalleryImage, Staff, AdmissionInquiry, ContactMessage
+from .models import Facility, GalleryImage, Staff, Admission, AdmissionInquiry, ContactMessage
 
 @admin.register(Facility)
 class FacilityAdmin(admin.ModelAdmin):
@@ -13,6 +13,10 @@ class GalleryAdmin(admin.ModelAdmin):
 @admin.register(Staff)
 class StaffAdmin(admin.ModelAdmin):
     list_display = ('name','role','staff_type')
+
+@admin.register(Admission)
+class AdmissionProcessAdmin(admin.ModelAdmin):
+    list_display = ('title', 'point')
 
 @admin.register(AdmissionInquiry)
 class AdmissionAdmin(admin.ModelAdmin):

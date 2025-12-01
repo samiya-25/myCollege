@@ -1,6 +1,6 @@
 # core/views.py
 from django.shortcuts import render, redirect
-from .models import Facility, GalleryImage, Staff
+from .models import Facility, GalleryImage, Staff, Admission
 from .forms import AdmissionForm, ContactForm
 
 def index(request):
@@ -18,6 +18,14 @@ def gallery(request):
 def facilities_view(request):
     facilities = Facility.objects.order_by('order')
     return render(request,'facilities.html', {'facilities':facilities})
+
+def admissionProcess(request):
+    admissionData=Admission.objects.all()
+
+    admissionData_render={
+        'admission':admissionData,
+    }
+    return render(request,'admissions.html',admissionData_render)
 
 def admissions(request):
     if request.method == 'POST':
