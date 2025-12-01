@@ -21,56 +21,25 @@
         <div class="row g-4">
 
             <!-- Admission Process -->
-            <div class="col-lg-6 col-md-6">
-                <div class="glass-card p-4">
-                    <h3 class="card-title">Admission Process</h3>
-                    <ul class="list-unstyled mt-3">
-                        <li>✔ Collect the admission form from the school office or download online.</li>
-                        <li>✔ Submit the filled form with required documents.</li>
-                        <li>✔ Attend student–teacher interaction session.</li>
-                        <li>✔ Final confirmation from the office.</li>
-                    </ul>
+            {% for i in admission %}
+             <div class="col-lg-6 col-md-6">
+                 <div class="glass-card p-4">
+                     <h3 class="card-title">{{ i.title }}</h3>
+                     <ul class="list-unstyled mt-3">
+                         <li>{{ i.point }}</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
 
             <!-- Documents Required -->
-            <div class="col-lg-6 col-md-6">
-                <div class="glass-card p-4">
-                    <h3 class="card-title">Documents Required</h3>
-                    <ul class="list-unstyled mt-3">
-                        <li>✔ Birth Certificate</li>
-                        <li>✔ Previous School Report Card</li>
-                        <li>✔ Aadhar Card (Student & Parents)</li>
-                        <li>✔ 2 Passport-size Photos</li>
-                    </ul>
-                </div>
-            </div>
+            
 
             <!-- Age Criteria -->
-            <div class="col-lg-6 col-md-6">
-                <div class="glass-card p-4">
-                    <h3 class="card-title">Age Criteria</h3>
-                    <ul class="list-unstyled mt-3">
-                        <li>Nursery: 3+ Years</li>
-                        <li>LKG: 4+ Years</li>
-                        <li>UKG: 5+ Years</li>
-                        <li>Grade 1 & above: As per govt. norms</li>
-                    </ul>
-                </div>
-            </div>
+            
 
             <!-- Why Choose Us -->
-            <div class="col-lg-6 col-md-6">
-                <div class="glass-card p-4">
-                    <h3 class="card-title">Why Choose Us?</h3>
-                    <ul class="list-unstyled mt-3">
-                        <li>🌟 Experienced Teachers</li>
-                        <li>🌟 Smart Classrooms</li>
-                        <li>🌟 Sports & Holistic Development</li>
-                        <li>🌟 Safe & Secure Campus</li>
-                    </ul>
-                </div>
-            </div>
+            
 
         </div>
     </div>
