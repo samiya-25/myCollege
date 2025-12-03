@@ -21,16 +21,16 @@
         <div class="row g-4">
 
             <!-- Admission Process -->
-            {% for i in admission %}
-             <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-6">
+                 {% for i in admission %}
                  <div class="glass-card p-4">
                      <h3 class="card-title">{{ i.title }}</h3>
                      <ul class="list-unstyled mt-3">
                          <li>{{ i.point }}</li>
                         </ul>
                     </div>
+                 {% endfor %}
                 </div>
-            {% endfor %}
 
             <!-- Documents Required -->
             
